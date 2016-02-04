@@ -10,9 +10,20 @@ if ( !function_exists('pre_var') ) {
 
 
 /**
+ * Return a plugin slug
+ */
+function pp_plugin_slug($path = '') {
+
+	$parts = array_filter(explode('/', $path));
+	return end($parts);
+
+}
+
+
+/**
  * Custom icon images for menu items
  */
-function pp_post_type_icon ( $supplied_args = array() ) {
+function pp_post_type_icon( $supplied_args = array() ) {
 
 	// Get the args
 	$args = wp_parse_args( $supplied_args, array() );
