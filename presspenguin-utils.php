@@ -30,3 +30,11 @@ add_action( 'admin_init', function() {
 	wp_enqueue_style( 'pputils_fontawesome' );
 } );
 
+
+/**
+ * Remove links to default 'post' type
+ */
+add_action('admin_head', function() {
+?>
+<style>#menu-posts, #wp-admin-bar-new-post, #menu-comments { display: none; }</style>
+<?php });
