@@ -1,14 +1,14 @@
 <?php
 /**
- * @package press-penguin-utils
+ * @package penguinpress-utils
  */
 /*
-Plugin Name: PressPenguin Utilities
+Plugin Name: PenguinPress Utilities
 Description: Utilities to help other content plugins
 Version: 1.0-alpha
 Author: Nathan Shubert-Harbison
 Author URI: http://nathansh.com
-Text Domain: press-penguin-utils
+Text Domain: penguinpress-utils
 */
 
 
