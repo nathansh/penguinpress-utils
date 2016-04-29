@@ -38,18 +38,3 @@ add_action('admin_head', function() {
 ?>
 <style>#menu-posts, #wp-admin-bar-new-post, #menu-comments { display: none; }</style>
 <?php });
-
-
-/*
- * Modifying TinyMCE editor to remove unused items.
- */
-add_filter( 'tiny_mce_before_init', 'pp_modify_tiny_mca', 1, 10 );
-function pp_modify_tiny_mca( $init ) {
-
-	$init['block_formats'] = apply_filters( 'pp-utils/editor/formats', 'Paragraph=p;Header 2=h2;Header 3=h3;Header 4=h4' );
-	$init['toolbar1'] = apply_filters( 'pp-utils/editor/toolbar1', 'formatselect,bold,italic,underline,strikethrough,bullist,numlist,blockquote,link,unlink,spellchecker' );
-	$init['toolbar2'] = apply_filters( 'pp-utils/editor/toolbar2', '' );
-
-	return $init;
-
-}
