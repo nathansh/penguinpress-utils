@@ -26,7 +26,7 @@ require_once PP_UTILS__PLUGIN_DIR . '/includes/utility.php';
  * Load font awesome in the admin
  */
 add_action( 'admin_init', function() {
-	wp_register_style( 'pputils_fontawesome', 'https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css' );
+	wp_register_style( 'pputils_fontawesome', 'https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css' );
 	wp_enqueue_style( 'pputils_fontawesome' );
 } );
 
