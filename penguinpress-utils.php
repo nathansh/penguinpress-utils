@@ -12,29 +12,37 @@ Text Domain: penguinpress-utils
 */
 
 
-define( 'PP_UTILS__PLUGIN_DIR', plugin_dir_path( __FILE__ ) );
-define( 'PP_UTILS__PLUGIN_URL', plugin_dir_url( __FILE__ ) );
-
-
 /**
- * Utility functions
+ * Load utility library
+ *
  */
-require_once PP_UTILS__PLUGIN_DIR . '/includes/utility.php';
+require_once 'includes/utility.php';
+
+// Fire an action on utilities loaded
+do_action( 'penguinpress-utils/utilities-loaded' );
 
 
 /**
  * Load font awesome in the admin
+ *
  */
 add_action( 'admin_init', function() {
+
 	wp_register_style( 'pputils_fontawesome', 'https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css' );
 	wp_enqueue_style( 'pputils_fontawesome' );
+
 } );
 
 
 /**
  * Remove links to default 'post' type
+ *
+ * @package pp
+ * @subpackage util
+ *
  */
-add_action('admin_head', function() {
-?>
-<style>#menu-posts, #wp-admin-bar-new-post, #menu-comments { display: none; }</style>
-<?php });
+function pp_hide_post_type() {
+	echo '<style>#menu-posts, #wp-admin-bar-new-post, #menu-comments { display: none; }</style>';
+}
+
+add_action( 'admin_head', 'pp_hide_post_type' );
